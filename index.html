@@ -35,8 +35,8 @@
 
 <div class="text-block">
   <h1>Data Source</h1>
-  <p>For our data source, we used Open Library's Subject API. Open Library is an online databse that hosts all information related to books. It contains information such as book covers, authors,
-  publishers, etc. Open Library has a Subject API that allows users to directly query any number of books in a certain genre. This way we were able to get 200 book for each genre for a total dataset of 1000 books. The genres we chose were Fantasy, Horror, Romance, Crime, and Science. We chose these genres because we felt that these genres had the most distict cover designs from each other.</p>
+  <p>For our data source, we used Open Library's Subject API. Open Library is an online database that hosts all information related to books. It contains information such as book covers, authors,
+  publishers, etc. Open Library has a Subject API that allows users to directly query any number of books in a certain genre. This way we were able to get 200 books for each genre for a total dataset of 1000 books. The genres we chose were Fantasy, Horror, Romance, Crime, and Science. We chose these genres because we felt that these genres had the most distinct cover designs from each other.</p>
 </div>
 
 <div class="text-block">
@@ -127,7 +127,7 @@ We later decided to perform dimensional reduction by using UMAP on all the featu
 
 <div class="text-block">
   <h1>RGB Histograms</h1>
-  <p>Our next idea was to calculate the RGB histogram for each of the book covers. An RGB histogram caputures the number of pixels for each of the 256 intensities for each of the RGB channels. Below is the RGB histogram for the book "The Lion the Witch and the Wardrobe"</p>
+  <p>Our next idea was to calculate the RGB histogram for each of the book covers. An RGB histogram captures the number of pixels for each of the 256 intensities for each of the RGB channels. Below is the RGB histogram for the book "The Lion the Witch and the Wardrobe"</p>
 </div>
 
 <div class="row">
@@ -138,7 +138,7 @@ We later decided to perform dimensional reduction by using UMAP on all the featu
 </div>
 
 <div class="text-block">
-  <p>Once we calculated the RGB histogram for each of our book covers. We then applied a UMAP clustering algorithim to the collection of RGB histograms to see what clusters formed. As expected, the UMAP algorithim clustered the books with similar color pallettes together. However, there were no clusters formed for each genre. This showed that the genre of a book is not an indicator of the book's color scheme. The bottom left chart is the UMAP clustering color coded by the book's genre. The bottom right chart is the same UMAP clustering with the corresponding book cover.</p>
+  <p>Once we calculated the RGB histogram for each of our book covers. We then applied a UMAP clustering algorithm to the collection of RGB histograms to see what clusters formed. As expected, the UMAP algorithm clustered the books with similar color palettes together. However, there were no clusters formed for each genre. This showed that the genre of a book is not an indicator of the book's color scheme. The bottom left chart is the UMAP clustering color coded by the book's genre. The bottom right chart is the same UMAP clustering with the corresponding book cover.</p>
 </div>
 
 <div class="row">
@@ -161,13 +161,13 @@ We later decided to perform dimensional reduction by using UMAP on all the featu
 
 <div class="text-block">
   <h1>Orientated FAST and Rotated BRIEF</h1>
-    <p>The second advanced technique that we tried was a feature detection model called ORB or Orientated Fast and Rotated Brief. ORB was an algorithm developed by Ethan Rublee, Vincent Rabaud, Kurt Konolige and Gary R. Bradski who combined two other popular computer vision algorithms FAST and BREIF. Efficiently what ORB does is that it finds the keypoints and descriptions in an image. Keypoints are clusters of pixels in an image that the algorithm deems hold significance an image. Below is an example of the keypoints for the book "Mary Poppins".</p>
+    <p>The second advanced technique that we tried was a feature detection model called ORB or Orientated Fast and Rotated Brief. ORB was an algorithm developed by Ethan Rublee, Vincent Rabaud, Kurt Konolige and Gary R. Bradski who combined two other popular computer vision algorithms FAST and BRIEF. Efficiently what ORB does is that it finds the key points and descriptions in an image. Key points are clusters of pixels in an image that the algorithm deems hold significance. Below is an example of the key points for the book "Mary Poppins".</p>
 </div>
 
 <div class="row">
   <div class="column">
     <img src="graphs/output/ORBimg1.png" alt="b1">
-    <p>Once we calculated the keypoints and descriptiors for each of our book covers. We then took every pair of covers and applied a brute force matcher that compared the Norm Hamming distance between the keypoints for each image. We then took the average distance between each pair of covers and kept track of the smallest average distance pair. We called this pair the "Best Match" for a cover. We then checked to see if the "Best Match" pair had the same genre. Below is a few examples of "Best Match" pairs.</p>
+    <p>Once we calculated the key points and descriptors for each of our book covers. We then took every pair of covers and applied a brute force matcher that compared the Norm Hamming distance between the key points for each image. We then took the average distance between each pair of covers and kept track of the smallest average distance pair. We called this pair the "Best Match" for a cover. We then checked to see if the "Best Match" pair had the same genre. Below are a few examples of "Best Match" pairs.</p>
     <img src="graphs/output/ORBimg2.PNG" alt="b1">
     <p>Below is a chart counting the number of pairs that shared the same genre. Our method worked best on Science and Horror books but was worse for Crime, Romance and Fantasy.</p>
     <img src="graphs/output/ORBimg3.png" alt="b1" height = "450" width = "650">
@@ -191,5 +191,5 @@ The graph does not form any visualized clusters based on the features, average b
 
 <div class="text-block">
   <h1>Conclusion</h1>
-  <p>In conclusion, we found no obvious trends found between a book's cover and genre. This suggest to us that covers and genres are mostly unrelated to each other. For future work we want to look into applying more advanced image processing techniques like MSER and merging bounding boxes to better extract text from covers. We want to look further into the relationship of text placements and genre.</p>
+  <p>In conclusion, we found no obvious trends found between a book's cover and genre. This suggests to us that covers and genres are mostly unrelated to each other. For future work we want to look into applying more advanced image processing techniques like MSER and merging bounding boxes to better extract text from covers. We want to look further into the relationship of text placements and genre.</p>
 </div>
